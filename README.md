@@ -2,7 +2,7 @@
 
 A full-stack web application designed to help students track their job applications throughout the job search process.
 
-![Student Job Tracker](https://via.placeholder.com/800x400?text=Student+Job+Tracker)
+![Student Job Tracker](https://student-job-tracker-red.vercel.app/)
 
 ---
 
@@ -73,7 +73,7 @@ student-job-tracker/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/student-job-tracker.git
+git clone https://github.com/Ceansyr/student-job-tracker.git
 cd student-job-tracker
 ```
 
