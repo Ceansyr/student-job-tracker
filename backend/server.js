@@ -13,7 +13,6 @@ app.use(cors())
 app.use(express.json())
 
 app.use('/api/jobs', jobRoutes)
-
 app.use(errorHandler);
 
 app.get('/', (req, res) => {
@@ -21,7 +20,7 @@ app.get('/', (req, res) => {
 })
 
 connectDB().then(() => {
-    app.listen(PORT, () => {
-      console.log(`🚀 Server running on port ${PORT}`);
-    });
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+  });
 });

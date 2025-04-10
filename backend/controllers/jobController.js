@@ -1,6 +1,5 @@
 import Job from '../models/Jobs.js'
 
-// @desc Add a new job
 export const addJob = async (req, res) => {
   try {
     const job = new Job(req.body)
@@ -11,13 +10,11 @@ export const addJob = async (req, res) => {
   }
 }
 
-// @desc Get all jobs
 export const getAllJobs = async (req, res, next) => {
   try {
     const { page = 1, limit = 10 } = req.query;
     const { status, sort, appliedDate } = req.query
 
-    // Build filter object
     const filter = {};
     if (status) filter.status = status;
     if (appliedDate) {
@@ -45,7 +42,6 @@ export const getAllJobs = async (req, res, next) => {
   }
 }
 
-// @desc Update job
 export const updateJob = async (req, res) => {
   try {
     const { id } = req.params
@@ -65,7 +61,6 @@ export const updateJob = async (req, res) => {
   }
 }
 
-// @desc Delete job
 export const deleteJob = async (req, res) => {
   try {
     const { id } = req.params
