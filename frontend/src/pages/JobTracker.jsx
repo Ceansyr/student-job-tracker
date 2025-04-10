@@ -22,11 +22,11 @@ const JobTracker = () => {
     try {
       let url = `${import.meta.env.VITE_API_URL}/jobs?`;
       if (statusFilter) url += `status=${statusFilter}&`;
-      if (dateFilter) url += `date=${dateFilter}&`;
+      if (dateFilter) url += `appliedDate=${dateFilter}&`; // Changed from 'date' to 'appliedDate'
 
       const res = await fetch(url);
-      const { data } = await res.json(); // Extract the `data` array from the response
-      setJobs(data); // Set the `data` array to the `jobs` state
+      const { data } = await res.json();
+      setJobs(data);
     } catch (err) {
       console.error('❌ Failed to fetch jobs:', err.message);
     }

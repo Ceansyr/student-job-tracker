@@ -15,9 +15,15 @@ export const addJob = async (req, res) => {
 export const getAllJobs = async (req, res, next) => {
   try {
     const { page = 1, limit = 10 } = req.query;
-    const { status, sort } = req.query
+    const { status, sort, appliedDate } = req.query
 
-    const filter = status ? { status } : {}
+    // Build filter object
+    const filter = {};
+    if (status) filter.status = status;
+    if (appliedDate) {
+      filter.appliedDate = appliedDate;
+    }
+
     const sortOption = sort === 'date' ? { appliedDate: -1 } : {}
 
     const jobs = await Job.find(filter)
@@ -39,15 +45,15 @@ export const getAllJobs = async (req, res, next) => {
   }
 }
 
-// @desc Update job status
-export const updateJobStatus = async (req, res) => {
+// @desc Update job
+export const updateJob = async (req, res) => {
   try {
     const { id } = req.params
-    const { status } = req.body
+    const updates = req.body
 
     const job = await Job.findByIdAndUpdate(
       id,
-      { status },
+      updates,
       { new: true, runValidators: true }
     )
 
