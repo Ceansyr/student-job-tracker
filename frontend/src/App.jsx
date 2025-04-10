@@ -1,19 +1,15 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import JobTracker from './pages/JobTracker';
 import './App.css';
 
-const App = () => {
+function App() {
   return (
-    <div id="root">
-      <header>
-        <h1>Student Job Tracker</h1>
-      </header>
-      <main>
-        <p>Welcome to the Student Job Tracker application!</p>
-      </main>
-      <footer>
-        <p>&copy; 2025 Student Job Tracker</p>
-      </footer>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<JobTracker />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
