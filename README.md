@@ -2,8 +2,6 @@
 
 A full-stack web application designed to help students track their job applications throughout the job search process.
 
-![Student Job Tracker](https://student-job-tracker-red.vercel.app/)
-
 ---
 
 ## ✨ Features
